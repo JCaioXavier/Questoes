@@ -1,0 +1,124 @@
+--QUESTÃO 3
+select
+	*
+from
+	pedidos p
+where
+	data_pedido > '20210901'
+	
+	
+	
+	
+	
+--QUESTÃO 4
+select
+	*
+from
+	produtos p
+where
+	quantidade_estoque = 0
+
+	
+	
+
+--QUESTÃO 5
+select 
+	nome_produto , preco 
+from 
+	produtos p  
+where 
+	preco > 50
+	
+	
+--QUESTÃO 6
+select 
+	nome_produto , preco 
+from 
+	produtos p  
+where 
+	preco >= 10 and preco <= 50
+order by preco 
+
+--QUESTÃO 7
+select 
+	*
+from 
+	clientes c 
+where 
+	pais in ('Alemanha' ,'Brasil' ,'FranÃ§a' )
+order by pais 
+
+--QUESTÃO 8
+select
+	*
+from
+	pedidos p 
+where
+	data_pedido >= '20210701' and data_pedido <= '20210831'
+	
+	
+--QUESTÃO 9
+select 
+	id_pedido , data_pedido, nome_cliente
+from
+	pedidos p 
+join 
+	clientes c on c.id_cliente = p.id_cliente 
+	
+--QUESTÃO 10 
+--Liste os detalhes dos pedidos com os nomes dos produtos e a quantidadde de cada item em cada pedido
+select 
+	 nome_produto,quantidade
+from 
+	 pedidos p 
+join 
+	detalhes_pedidos dp on p.id_pedido = dp.id_pedido 
+join 
+	produtos p2 on p2.id_produto = dp.id_produto 
+	
+	
+--QUESTÃO 11
+--Liste os produtos e quantidades do pedido com id_pedido = 10250
+select 
+	 nome_produto,quantidade
+from 
+	 pedidos p
+join 
+	detalhes_pedidos dp on p.id_pedido = dp.id_pedido 
+join 
+	produtos p2 on p2.id_produto = dp.id_produto
+where 
+	dp.id_pedido = '10250'
+
+--QUESTÃO 12
+--Liste todos os pedidos que contem produtos da categoria "carne/aves"
+select 
+	 nome_produto, nome_categoria
+from 
+	 pedidos p
+join 
+	detalhes_pedidos dp on p.id_pedido = dp.id_pedido 
+join 
+	produtos p2 on p2.id_produto = dp.id_produto
+join 
+	categorias c on p2.id_categoria = c.id_categoria 
+where 
+	nome_categoria in ('Carne/Aves')
+	
+--QUESTÃO 13
+--Insira um novo cliente "Casa de Produtos Naturais" localizado no Brasil na cidade de Curitiba
+	
+	
+	
+
+--QUESTÃO 14
+--Insira um novo produto "Doce de Leite Artesanal" na categoria "Doces", com preço de R$ 12,50 e estoque inicial de 100 unidades
+
+
+	
+	
+	
+	
+	
+	
+	
